@@ -304,44 +304,6 @@ Example:
 
 This guide provides a solid foundation for getting started with TypeScript development.
 
-# TypeScript Projects and Assignments
-
-This repository contains all the classes, Node.js projects, and assignments related to TypeScript.
-
-## Contents
-
-- [Classes](#classes)
-- [Node.js Projects](#nodejs-projects)
-- [Assignments](#assignments)
-
-## Classes
-
-List the classes or topics covered in your TypeScript course here, along with any relevant information or links.
-
-1. **Class 1:**
-   Description: Provide a brief description of the project.
-   [https://github.com/ahmedjawad1857/Typescript-PIAIC/tree/master/ts-classes/class01](<class01(hello-World)>)
-
-## Node.js Projects
-
-Include descriptions and links to any Node.js projects related to TypeScript that you have worked on. You can provide a brief overview of each project and link to their respective folders or repositories.
-
-1. **Project Name 1:**
-   Description: Provide a brief description of the project.
-   [https://github.com/ahmedjawad1857/node_projects/tree/master/simple-calculator](<project1(Simple-Calculator)>)
-
-2. **Project Name 2:**
-   Description: Provide a brief description of the project.
-   [](<project2(Guess-The-Number-Game)>)
-
-## Assignments
-
-List the assignments related to TypeScript along with any instructions or details.
-
-1. **Assignment 1:**
-   Description: Provide a brief description of the assignment.
-   [](assignment1/)
-
 # Publishing Your Project on npm
 
 To publish your project on npm, follow these steps:
