@@ -227,6 +227,81 @@ For development purposes, you can utilize nodemon, a tool that automatically res
 nodemon node filename.js
 ```
 
+# Updating Configuration Files
+
+If you need to update the configuration files `tsconfig.json` and `package.json` for your TypeScript project, you can follow these steps:
+
+## Updating tsconfig.json
+
+1. **Change Target to ES2022:**
+   Update the `target` option in `tsconfig.json` to specify ES2022 as the target ECMAScript version.
+
+   Example:
+
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ES2022", ///at line 14
+       ...
+     },
+    ...
+   }
+   ```
+
+1. **Change Module to NodeNext:**
+   Change the module option to specify NextNode as the module system.
+
+Example:
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "module": "NodeNext", // at line 28
+    ...
+  },
+  ...
+}
+```
+
+2. **Update Module Resolution:**
+   Comment out the moduleResolution option and change its value to NodeNext.
+
+Example:
+
+```json
+{
+  "compilerOptions": {
+    ...
+    // "moduleResolution": "Node",  // Commented out
+    "moduleResolution": "NodeNext", // at line 30
+    ...
+  },
+  ...
+}
+```
+
+## Updating package.json
+
+1. **Add Type Module:**
+   After the "main" field in package.json, add a "type" field with the value "module" to indicate that your project uses ECMAScript modules.
+
+Example:
+
+```json
+{
+  "name": "your-package-name",
+  "version": "1.0.0",
+  "description": "Your package description",
+  "main": "index.js",
+  "type": "module",  // Added line
+  "scripts": {
+    ...
+  },
+  ...
+}
+```
+
 This guide provides a solid foundation for getting started with TypeScript development.
 
 # TypeScript Projects and Assignments
@@ -245,7 +320,7 @@ List the classes or topics covered in your TypeScript course here, along with an
 
 1. **Class 1:**
    Description: Provide a brief description of the project.
-   [](<class01(hello-World)>)
+   [https://github.com/ahmedjawad1857/Typescript-PIAIC/tree/master/ts-classes/class01](<class01(hello-World)>)
 
 ## Node.js Projects
 
@@ -253,7 +328,7 @@ Include descriptions and links to any Node.js projects related to TypeScript tha
 
 1. **Project Name 1:**
    Description: Provide a brief description of the project.
-   [](<project1(Simple-Calculator)>)
+   [https://github.com/ahmedjawad1857/node_projects/tree/master/simple-calculator](<project1(Simple-Calculator)>)
 
 2. **Project Name 2:**
    Description: Provide a brief description of the project.
@@ -267,3 +342,82 @@ List the assignments related to TypeScript along with any instructions or detail
    Description: Provide a brief description of the assignment.
    [](assignment1/)
 
+# Publishing Your Project on npm
+
+To publish your project on npm, follow these steps:
+
+## Update Main File
+
+1. **Add Shebang Line (`#! /usr/bin/env node`):**
+   In your main file (`index.ts`), add a shebang line at the top to make it executable as a command-line interface (CLI).
+
+   Example:
+
+   ```typescript
+   #! /usr/bin/env node
+
+   // Your TypeScript code here
+   ```
+
+## Update package.json
+
+**Update package.json Configuration:**
+
+1. Update the **package.json** file to specify the necessary configuration for npm publishing.
+
+Example:
+
+```json
+{
+  "name": "m-simple-calculator",
+  "version": "1.0.1",
+  "description": "A simple Calculator with TypeScript, Node.js, and Inquirer",
+  "main": "index.js",
+  "bin": "index.js",   // Add this line
+  "type": "module",
+  ...
+}
+
+
+```
+
+## Login to npm:
+
+1. If you haven't already have an account, create an account on npmjs.com. Then, in your terminal, run the following command to log in to npm:
+
+```bash
+npm login
+```
+
+Follow the prompts and enter your npm username, password, and email address or press enter to go on browser directly
+
+## Publish Your Package
+
+1. **Compile Your TypeScript Code:**
+   Before publishing, make sure to compile your TypeScript code into JavaScript using the TypeScript compiler (tsc).
+
+Example:
+
+```bash
+tsc
+
+```
+
+or run
+
+```bash
+tsc filename.ts
+```
+
+2. **Publish Your Package:**
+   After compiling your code, navigate to the folder where your package.json is located. Then, run the following command to publish your package to npm:
+
+```bash
+npm publish
+```
+
+## Check Your Package on npmjs.com:
+
+1. After publishing, you can check your package on npmjs.com. Log in to your npm account on the website and navigate to your profile. Click on the "Packages" dropdown to view your published package. You can click on your package to see its details.
+
+That's it! Your package is now published on npm and can be installed and used by others.
